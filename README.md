@@ -1,60 +1,92 @@
-Cub3D
+# 🕹️ Cub3D - Raycasting Engine
 
-Cub3D è un progetto della scuola 42 che consiste nello sviluppo di un piccolo motore grafico in C, ispirato al classico gioco Wolfenstein 3D. Il progetto ha l’obiettivo di far comprendere e applicare concetti di grafica 3D, gestione di finestre e rendering tramite raycasting.
+**Cub3D** is a project from the **42 School** curriculum, inspired by the legendary *Wolfenstein 3D*.
+The goal is to build a dynamic "first-person" graphic engine using **Raycasting** technology, implemented from scratch in C.
 
-Funzionalità principali
+This project dives deep into the mathematics behind 3D rendering, window event management, and rendering optimization.
 
-Rendering 3D basato su raycasting.
+![Screenshot](path/to/screenshot.png)
+*(Tip: Replace this link with a screenshot of your running game)*
 
-Movimenti del giocatore con gestione delle collisioni.
+## ✨ Key Features
 
-Caricamento di mappe da file .cub.
+* **Raycasting Rendering:** Mathematical implementation to simulate 3D depth in a 2D environment.
+* **Texture Mapping:** Support for distinct textures on walls based on cardinal directions (North, South, East, West).
+* **Custom Colors:** RGB color management for floor and ceiling defined in the configuration file.
+* **Player Movement:**
+    * Smooth movement (forward, backward, strafe).
+    * Camera rotation.
+    * **Collision Detection:** Proper wall collision handling.
+* **Map Parsing:** Robust reading and validation of `.cub` files to configure the map and assets.
 
-Gestione di texture per muri, pavimento e soffitto.
+---
 
-Rotazione e navigazione libera nella mappa
+## 🛠️ Tech Stack
 
-Tecnologie e librerie
+* **Language:** C (strictly adhering to the 42 Norm).
+* **Graphics:** MiniLibX (42's simple X-Window interface library).
+* **Math:** Heavy usage of trigonometric functions (`math.h`) for ray calculations.
+* **Build:** Custom Makefile.
 
-Linguaggio C.
+---
 
-Libreria grafica MiniLibX.
+## 🎮 Controls
 
-Makefile per compilazione automatica.
+| Key | Action |
+| :--- | :--- |
+| `W` / `▲` | Move Forward |
+| `S` / `▼` | Move Backward |
+| `A` | Strafe Left |
+| `D` | Strafe Right |
+| `←` | Rotate Camera Left |
+| `→` | Rotate Camera Right |
+| `ESC` | Exit Game |
 
-Obiettivi del progetto
+---
 
-Comprendere il funzionamento del raycasting.
+## 🚀 Installation & Usage
 
-Implementare un motore grafico 3D base senza l’uso di librerie avanzate.
+### Prerequisites
+* GCC or Clang
+* Make
+* X11 libraries (Linux) or AppKit (MacOS)
 
-Migliorare la gestione della memoria e della programmazione modulare in C.
---------------------------------------------------------------------------------------
-Cub3D is a project from 42 School that involves developing a small C-based graphics engine inspired by the classic game Wolfenstein 3D. The project aims to teach and apply concepts of 3D graphics, window management, and raycasting rendering.
+### Instructions
 
-Key Features
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/cub3d.git](https://github.com/your-username/cub3d.git)
+    cd cub3d
+    ```
 
-3D rendering using raycasting.
+2.  **Compilation:**
+    Use the Makefile to generate the executable:
+    ```bash
+    make
+    ```
 
-Player movement with collision detection.
+3.  **Execution:**
+    Run the program by passing a `.cub` map file as an argument:
+    ```bash
+    ./cub3D maps/map.cub
+    ```
 
-Loading maps from .cub files.
+---
 
-Texture management for walls, floor, and ceiling.
+## 🗺️ Map Configuration (.cub)
 
-Free rotation and navigation in the map.
+The program parses map files formatted as follows:
 
-Technologies and Libraries
+```text
+NO ./path/to/north_texture.xpm
+SO ./path/to/south_texture.xpm
+WE ./path/to/west_texture.xpm
+EA ./path/to/east_texture.xpm
 
-C programming language.
+F 220,100,0    # Floor Color (RGB)
+C 225,30,0     # Ceiling Color (RGB)
 
-MiniLibX graphics library.
-
-Makefile for automatic compilation.
-
-Project Goals
-
-Understand how raycasting works.
-
-Implement a basic 3D engine without advanced libraries.
-Improve memory management and modular programming in C.
+111111
+100001
+10N001
+111111
