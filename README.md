@@ -44,7 +44,7 @@ This project dives deep into the mathematics behind 3D rendering, window event m
 ## 🚀 Installation & Usage
 
 ### Prerequisites
-* GCC or Clang
+* CC or Clang
 * Make
 * X11 libraries (Linux) or AppKit (MacOS)
 
