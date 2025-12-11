@@ -5,9 +5,6 @@ The goal is to build a dynamic "first-person" graphic engine using **Raycasting*
 
 This project dives deep into the mathematics behind 3D rendering, window event management, and rendering optimization.
 
-![Screenshot](path/to/screenshot.png)
-*(Tip: Replace this link with a screenshot of your running game)*
-
 ## ✨ Key Features
 
 * **Raycasting Rendering:** Mathematical implementation to simulate 3D depth in a 2D environment.
